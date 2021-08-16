@@ -1,0 +1,5 @@
+{
+	"python.formatting.provider":"black",
+	"python.formatting.blackPath": "~/.local/bin/black",
+	"coc.preferences.formatOnSaveFiletypes": ["python"]
+}
