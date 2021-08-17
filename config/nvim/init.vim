@@ -2,6 +2,7 @@
 
 source ~/.config/nvim/plugins.vim 
 source ~/.config/nvim/maps.vim 
+source ~/.config/nvim/coc.vim
 
 syntax on
 
