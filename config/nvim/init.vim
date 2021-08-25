@@ -5,9 +5,9 @@ source ~/.config/nvim/maps.vim
 source ~/.config/nvim/coc.vim
 
 syntax on
-
-set termguicolors
 colorscheme gruvbox 
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
+
 
 set tabstop=2 shiftwidth=2
 
