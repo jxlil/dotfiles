@@ -23,6 +23,7 @@ alias cp="cp -r"
 alias rm="rm -r"
 
 alias dotfiles="cd ~/.dotfiles"
+alias py="python3"
 alias v="nvim"
 
 
