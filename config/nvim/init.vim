@@ -6,8 +6,6 @@ source ~/.config/nvim/coc.vim
 
 syntax on
 colorscheme gruvbox 
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
-
 
 set tabstop=2 shiftwidth=2
 
