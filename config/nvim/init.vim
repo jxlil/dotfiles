@@ -7,8 +7,10 @@ source ~/.config/nvim/coc.vim
 syntax on
 colorscheme gruvbox 
 
-set tabstop=2 shiftwidth=2
+" transparent bg Windows Terminal
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE 
 
+set tabstop=2 shiftwidth=2
 set relativenumber
 set number
 
