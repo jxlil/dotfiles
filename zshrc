@@ -20,7 +20,6 @@ alias vimrc="nvim ~/.config/nvim/init.vim"
 alias zshrc="nvim ~/.zshrc"
 
 alias cp="cp -r"
-alias rm="trash"
 
 alias dotfiles="cd ~/.dotfiles"
 alias py="python3"
