@@ -1,6 +1,5 @@
 {
 	"python.pythonPath": "/usr/bin/python3",
 	"python.formatting.provider":"black",
-	"python.formatting.blackPath": "~/.local/bin/black",
-	"coc.preferences.formatOnSaveFiletypes": ["python"]
+	"python.formatting.blackPath": "~/.local/bin/black"
 }
