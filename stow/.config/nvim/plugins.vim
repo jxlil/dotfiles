@@ -2,6 +2,8 @@
 " Plugins
 " -------
 
+let g:coc_global_extensions = ['coc-css', 'coc-git', 'coc-html', 'coc-htmldjango', 'coc-json', 'coc-pyright', 'coc-snippets', 'coc-tsserver']
+
 call plug#begin(stdpath('config') . "/plugged") 
 
 " Vim plugin, insert or delete brackets, parens, quotes in pair 
