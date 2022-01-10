@@ -2,5 +2,6 @@
 	email = 61639983+jxlil@users.noreply.github.com
 	name = Jalil SA
 	username = jxlil
+
 [init]
-	defaultBranch = main
+	defaultBranch = master 
