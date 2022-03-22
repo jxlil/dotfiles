@@ -1,5 +1,5 @@
 # dotfiles
 
 ```
-git clone --recurse-submodules git@github.com:jxlil/dotfiles.git
+curl -Ls https://raw.githubusercontent.com/jxlil/dotfiles/main/install.sh | bash
 ```
