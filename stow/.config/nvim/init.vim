@@ -5,7 +5,9 @@ source ~/.config/nvim/maps.vim
 source ~/.config/nvim/coc.vim
 
 syntax on
-colorscheme gruvbox 
+
+colorscheme gruvbox
+set termguicolors
 
 " transparent bg Windows Terminal
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE 
