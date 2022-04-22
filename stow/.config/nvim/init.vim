@@ -6,7 +6,7 @@ source ~/.config/nvim/coc.vim
 
 syntax on
 
-colorscheme gruvbox
+colorscheme gruvbox 
 set termguicolors
 
 " transparent bg Windows Terminal
@@ -19,6 +19,7 @@ set mouse=a
 set cursorline
 set ruler
 set nowrap
+set pyx=3
 
 set smartindent
 set autoindent
