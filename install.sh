@@ -12,8 +12,9 @@ PACKAGES=(
 	python3-pip
 	build-essential
 	zsh
-	stow
 )
+
+DOTFILES="$HOME/.dotfiles"
 
 function install_packages() {
 	echo "${bold}=> Installing packages: ${PACKAGES[*]}${norm}"
@@ -24,10 +25,12 @@ function install_packages() {
 function install_dotfiles() {
 	echo "${bold}=> Installing doftiles${norm}"
 
-	git clone --recurse-submodules git@github.com:jxlil/dotfiles.git $HOME/.dotfiles
-	
-	cd $HOME/.dotfiles
-	stow --dotfiles stow
+	git clone --recurse-submodules https://github.com/jxlil/dotfiles.git $DOTFILES
+	cd $DOTFILES
+
+	ln -s $DOTFILES/gitconfig $HOME/.gitconfig
+	ln -s $DOTFILES/nvim/ $HOME/.config/nvim
+	ln -s $DOTFILES/zshrc $HOME/.zshrc
 }
 
 function install_nvm() {
@@ -43,6 +46,7 @@ function install_nvm() {
 
 function install_neovim() {
 	echo "${bold}=> Installing neovim${norm}"
+
 	mkdir -p ~/.local/bin
 	curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o $HOME/.local/bin/nvim
 	chmod u+x $HOME/.local/bin/nvim
