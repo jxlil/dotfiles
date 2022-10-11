@@ -4,14 +4,13 @@
 export DOTFILES="$HOME/.dotfiles"
 export ZSH="$DOTFILES/ohmyzsh"
 
-# add local bin
-export PATH="$HOME/.local/bin/":$PATH
-
 # Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
+export PATH="$HOME/.local/bin/":$PATH
 
 # theme
 ZSH_THEME="fishy"
@@ -25,22 +24,7 @@ source $ZSH/oh-my-zsh.sh
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias zshrc="nvim ~/.zshrc"
 
-alias cp="cp -r"
-
 alias dotfiles="cd ~/.dotfiles"
 alias py="python3"
+alias cp="cp -r"
 alias v="nvim"
-
-
-# functions
-trash() {
-	mkdir -p /tmp/wastebasket
-	for junk_file in ${@}; do 
-		mv $junk_file /tmp/wastebasket/${junk_file}-$(date +%y%m%d%H%M%S)
-	done
-}
-
-destroy() {
-	shred -vzu -n 10 $*
-}
-
