@@ -1,8 +1,0 @@
-{
-	"python.formatting.provider": "black",
-	"python.formatting.blackPath": "~/.local/bin/black",
-	"python.venvPath": "~/.venv/bin/python",
-	"coc.preferences.formatOnSaveFiletypes": [
-		"python"
-	]
-}
