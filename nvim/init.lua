@@ -1,7 +1,6 @@
 
 -- GENERAL 
 require("options")
-require("variables")
 require("plugins")
 require("mappings")
 
