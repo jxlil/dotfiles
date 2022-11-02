@@ -2,6 +2,7 @@
 local g = vim.g
 
 g.mapleader = " "
+g.foldmethod = "indent"
 
 g.background = "dark"
 g.t_co = 256
