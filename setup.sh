@@ -3,24 +3,7 @@
 bold=$(tput bold)
 norm=$(tput sgr0)
 
-PACKAGES=(
-	curl
-	wget
-	git
-	htop
-	python3
-	python3-pip
-	build-essential
-	zsh
-)
-
 DOTFILES="$HOME/.dotfiles"
-
-function install_packages() {
-	echo "${bold}=> Installing packages: ${PACKAGES[*]}${norm}"
-
-	sudo apt install ${PACKAGES[*]} -y
-}
 
 function install_dotfiles() {
 	echo "${bold}=> Installing doftiles${norm}"
@@ -47,18 +30,19 @@ function install_nvm() {
 function install_neovim() {
 	echo "${bold}=> Installing neovim${norm}"
 
-	mkdir -p ~/.local/bin
-	curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o $HOME/.local/bin/nvim
-	chmod u+x $HOME/.local/bin/nvim
+    if [[ -f "`which brew`" ]]; then
+        brew install neovim
 
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        # install Packer
+        git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+            ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-	$HOME/.local/bin/nvim +PlugInstall +qa
+        neovim +PackerInstall +qa
+        neovim +checkhealt
+    fi
 }
 
 function main () {
-	install_packages
 	install_dotfiles
 	install_nvm
 	install_neovim
