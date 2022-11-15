@@ -25,6 +25,7 @@ local options = {
     backup = false,
     
     background = "dark",
+    colorcolumn = "80",
 }
 
 for key, value in pairs(options) do
