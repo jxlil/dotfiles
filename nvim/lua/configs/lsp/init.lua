@@ -19,11 +19,14 @@ local null_ls_opts = lsp.build_options("null-ls", {
 
 
 local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
 null_ls.setup({
     on_attach = null_ls_opts.on_attach,
     sources = {
+        formatting.prettier,
         formatting.black.with({extra_args = {"--fast", "--line-length=200"}}),
-        formatting.prettier
+        diagnostics.flake8
     }
 })
 
