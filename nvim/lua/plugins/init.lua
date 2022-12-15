@@ -27,6 +27,9 @@ return require("packer").startup(function(use)
     use {"tpope/vim-fugitive"}
     use {"lewis6991/gitsigns.nvim"}
 
+    -- Fold
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
     -- LSP
     use {
         "VonHeikemen/lsp-zero.nvim",
