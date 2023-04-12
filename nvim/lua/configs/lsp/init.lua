@@ -6,15 +6,6 @@ lsp.preset("recommended")
 
 local null_ls = require("null-ls")
 local null_ls_opts = lsp.build_options("null-ls", {
-    on_attach = function(client)
-        if client.server_capabilities.documentFormattingProvider then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                desc = "Auto format before save",
-                pattern = "<buffer>",
-                callback = vim.lsp.buf.formatting,
-            })
-        end
-    end
 })
 
 
@@ -37,4 +28,4 @@ lspconfig.tsserver.setup {
     on_attach = function(client)
         client.server_capabilities.documentFormattingProvider = false
     end
-} 
+}

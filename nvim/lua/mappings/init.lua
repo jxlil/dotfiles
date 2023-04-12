@@ -22,5 +22,5 @@ map("n", "<leader>fg", ":Telescope live_grep<cr>", default_opts)
 map("n", "<leader>fb", ":Telescope buffers<cr>", default_opts)
 
 -- Fast scrolling
-map('n', '<C-j>', '10<C-e>', default_opts)
-map('n', '<C-k>', '10<C-y>', default_opts)
+map('n', '<C-j>', '<C-d>zz', default_opts)
+map('n', '<C-k>', '<C-u>zz', default_opts)

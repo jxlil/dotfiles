@@ -2,6 +2,7 @@
 return require("packer").startup(function(use)
     use {"wbthomason/packer.nvim"}
 
+    use {"ThePrimeagen/vim-be-good"}
     use { "catppuccin/nvim", as = "catppuccin" }
     use {"navarasu/onedark.nvim"}
     use {"nvim-lualine/lualine.nvim"}
