@@ -5,10 +5,7 @@ require("plugins")
 require("mappings")
 
 -- PLUGINS
--- colorshemes:
--- require("configs.onedark")
-require('configs.catppuccin')
-
+require("configs.gruvbox")
 require("configs.autopairs")
 require("configs.nvim-tree")
 require("configs.lualine")
