@@ -1,18 +1,17 @@
 
 return require("packer").startup(function(use)
     use {"wbthomason/packer.nvim"}
-
-    use { "ellisonleao/gruvbox.nvim" }
+    use {"akinsho/toggleterm.nvim", tag='v2.*'}
+    use {"ellisonleao/gruvbox.nvim"}
     use {"nvim-lualine/lualine.nvim"}
     use {"mg979/vim-visual-multi"}
+    use {"windwp/nvim-autopairs"}
 
     use {
         "kyazdani42/nvim-tree.lua",
         requires = {
             "kyazdani42/nvim-web-devicons", 
     }}
-
-    use {"akinsho/toggleterm.nvim", tag='v2.*'}
 
     -- Telescope
     use {
@@ -31,27 +30,35 @@ return require("packer").startup(function(use)
 
     -- LSP
     use {
-        "VonHeikemen/lsp-zero.nvim",
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
         requires = {
             -- LSP Support
-            {"neovim/nvim-lspconfig"},
-            {"williamboman/nvim-lsp-installer"},
-            {"jose-elias-alvarez/null-ls.nvim"},
+            {'neovim/nvim-lspconfig'},             -- Required
+            {"williamboman/mason-lspconfig.nvim"},
+            {                                      -- Optional
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
 
-            -- Autocomplete
-            {"hrsh7th/nvim-cmp"},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
             {"hrsh7th/cmp-buffer"},
             {"hrsh7th/cmp-path"},
-            {"saadparwaiz1/cmp_luasnip"},
             {"hrsh7th/cmp-nvim-lsp"},
-            {"hrsh7th/cmp-nvim-lua"},
-            {"windwp/nvim-autopairs"},
-
-            -- Snippets
-            {"L3MON4D3/LuaSnip"},
-            {"rafamadriz/friendly-snippets"},
+            {"saadparwaiz1/cmp_luasnip"},
+            {'L3MON4D3/LuaSnip'},     -- Required
         }
     }
-
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = {
+            "williamboman/mason.nvim",
+            "jay-babu/mason-null-ls.nvim",
+        },
+    }
 end)
 

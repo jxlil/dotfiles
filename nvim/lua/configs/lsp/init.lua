@@ -1,31 +1,38 @@
+local lsp = require('lsp-zero').preset({})
 
-local lspconfig = require('lspconfig')
-local lsp = require("lsp-zero")
+require('mason-null-ls').setup {
+  ensure_installed = { "pyright", "isort", "black", "flake8" }
+}
 
-lsp.preset("recommended")
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+  local default_opts = {buffer = bufnr, remap = false}
+  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, default_opts)
+  vim.keymap.set("n", "<leader>n", vim.diagnostic.goto_next, default_opts)
+  vim.keymap.set("n", "<leader>p", vim.diagnostic.goto_prev, default_opts)
+end)
 
 local null_ls = require("null-ls")
-local null_ls_opts = lsp.build_options("null-ls", {
+null_ls.setup({
+	sources = {
+		null_ls.builtins.diagnostics.flake8,
+		null_ls.builtins.formatting.isort.with({
+			extra_args = { "--profile=black" },
+		}),
+		null_ls.builtins.formatting.black.with({
+			extra_args = { "--fast", "--line-length=200" },
+		}),
+	},
 })
 
-
-local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
-
-null_ls.setup({
-    on_attach = null_ls_opts.on_attach,
-    sources = {
-        formatting.prettier,
-        formatting.black.with({extra_args = {"--fast", "--line-length=200"}}),
-        diagnostics.flake8
-    }
+lsp.format_on_save({
+	format_opts = {
+		timeout_ms = 1000,
+	},
+	servers = {
+		["null-ls"] = { "python" },
+	},
 })
 
 
 lsp.setup()
-
-lspconfig.tsserver.setup {
-    on_attach = function(client)
-        client.server_capabilities.documentFormattingProvider = false
-    end
-}
