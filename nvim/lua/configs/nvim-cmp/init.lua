@@ -8,6 +8,10 @@ local luasnip = require("luasnip")
 local cmp = require("cmp")
 
 cmp.setup({
+    sources = {
+        {name = "buffer"},
+    },
+
     mapping = {
         ['<CR>'] = cmp.mapping.confirm({select = false}),
         ["<Tab>"] = cmp.mapping(function(fallback)
