@@ -22,7 +22,7 @@ map("n", "<leader>fg", ":Telescope live_grep<cr>", default_opts)
 map("n", "<leader>fb", ":Telescope buffers<cr>", default_opts)
 
 -- ToggleTerm 
-map("n", "<C-t>", ":ToggleTerm direction=tab <CR>", default_opts)
+map("n", "<leader>t", ":ToggleTerm direction=tab <CR>", default_opts)
 map("t", "<esc>", "<C-\\><C-n>", default_opts)
 map("t", "<C-w>", "<C-\\><C-n><C-w>", default_opts)
 
