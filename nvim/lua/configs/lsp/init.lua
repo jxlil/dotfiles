@@ -20,7 +20,8 @@ null_ls.setup({
             extra_args = { "--profile=black" },
         }),
 		null_ls.builtins.formatting.black.with({
-			extra_args = { "--fast", "--line-length=200" },
+            extra_args = { "--fast", "--line-length=200" },
+            -- extra_args = { "--fast"},
 		}),
 	},
 })
