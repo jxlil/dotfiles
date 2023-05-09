@@ -1,18 +1,24 @@
-
-require('kanagawa').setup({
-    undercurl = true,            -- enable undercurls
-    commentStyle = { italic = true },
-    keywordStyle = { italic = true},
-    statementStyle = { bold = true },
-    transparent = true,         -- do not set background color
-    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-    theme = "wave",              -- Load "wave" theme when 'background' option is not set
-    background = {               -- map the value of 'background' option to a theme
-        dark = "wave",           -- try "dragon" !
-        light = "lotus"
-    },
+-- setup must be called before loading the colorscheme
+-- Default options:
+require("gruvbox").setup({
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = {
+    strings = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true,
+  contrast = "soft",
+  dim_inactive = false,
+  transparent_mode = true,
 })
 
--- setup must be called before loading
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme gruvbox")

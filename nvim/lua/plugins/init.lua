@@ -2,7 +2,7 @@
 return require("packer").startup(function(use)
     use {"wbthomason/packer.nvim"}
     use {"akinsho/toggleterm.nvim", tag='v2.*'}
-    use {"rebelot/kanagawa.nvim"}
+    use {"ellisonleao/gruvbox.nvim" }
     use {"nvim-lualine/lualine.nvim"}
     use {"mg979/vim-visual-multi"}
     use {"windwp/nvim-autopairs"}
