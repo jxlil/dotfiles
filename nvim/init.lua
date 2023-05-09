@@ -5,7 +5,7 @@ require("plugins")
 require("mappings")
 
 -- PLUGINS
-require("configs.gruvbox")
+require("configs.colorscheme")
 require("configs.autopairs")
 require("configs.nvim-tree")
 require("configs.lualine")
