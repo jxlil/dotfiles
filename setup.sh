@@ -14,6 +14,7 @@ function install_dotfiles() {
 	ln -s $DOTFILES/gitconfig $HOME/.gitconfig
 	ln -s $DOTFILES/nvim/ $HOME/.config/nvim
 	ln -s $DOTFILES/zshrc $HOME/.zshrc
+	ln -s $DOTFILES/tmux.conf $HOME/.tmux.conf
 }
 
 function install_nvm() {
