@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
     }
 
     use { 'mhartington/formatter.nvim' }
+    use { "mg979/vim-visual-multi" }
 
     use {
         "kyazdani42/nvim-tree.lua",
