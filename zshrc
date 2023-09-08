@@ -3,6 +3,7 @@
 
 export DOTFILES="$HOME/.dotfiles"
 export ZSH="$DOTFILES/ohmyzsh"
+export ZSH_CUSTOM="$DOTFILES/ohmyzsh-custom"
 
 # Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
@@ -17,7 +18,7 @@ export PATH="$HOME/Library/Python/3.9/bin/":$PATH
 ZSH_THEME="fishy"
 
 # plugins
-plugins=(git extract)
+plugins=(git extract scrapy)
 
 source $ZSH/oh-my-zsh.sh
 
