@@ -22,6 +22,24 @@ require("formatter").setup {
               }
           end,
       },
+      typescriptreact = {
+        function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+            stdin = true
+          }
+        end
+      },
+      typescript = {
+        function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+            stdin = true
+          }
+        end
+      },
 
       ["*"] = {
           -- "formatter.filetypes.any" defines default configurations for any
