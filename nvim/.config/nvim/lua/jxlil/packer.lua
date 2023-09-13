@@ -11,6 +11,13 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
     use { 'mhartington/formatter.nvim' }
     use { "mg979/vim-visual-multi" }
 
