@@ -1,0 +1,13 @@
+[font]
+size = 16.0
+
+[font.normal]
+family = "SF Mono"
+style = "Regular"
+
+[font.bold]
+style = "Medium"
+
+[window]
+opacity = 0.95
+blur = true
