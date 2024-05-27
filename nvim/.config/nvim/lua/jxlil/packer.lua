@@ -4,26 +4,23 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use 'windwp/nvim-autopairs'
+  use 'kyazdani42/nvim-tree.lua'
+  use 'mhartington/formatter.nvim'
+  use 'mg979/vim-visual-multi'
 
-  use {
-    'windwp/nvim-autopairs',
-    config = function() require('nvim-autopairs').setup {} end
-  }
+  -- colorscheme
+  use 'sainnhe/gruvbox-material'
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-  }
-
-  use { 'mhartington/formatter.nvim' }
-  use { 'mg979/vim-visual-multi' }
+  -- git
+  use 'tpope/vim-fugitive'
+  use 'lewis6991/gitsigns.nvim'
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  -- colorscheme 
-  use { 'sainnhe/gruvbox-material' }
 
   use {
     'folke/trouble.nvim',
@@ -42,9 +39,6 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- git
-  use {'tpope/vim-fugitive'}
-  use {'lewis6991/gitsigns.nvim'}
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -69,6 +63,6 @@ return require('packer').startup(function(use)
     }
   }
 
-  
+
 
 end)
