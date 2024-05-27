@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = master 
+
+[user]
+	email = 61639983+jxlil@users.noreply.github.com
+	name = Jalil SA
+	username = jxlil
+
+[includeIf "gitdir:~/Workspace/rappi/"]
+	path = ~/Workspace/rappi/.gitconfig
+
