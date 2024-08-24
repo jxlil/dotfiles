@@ -18,14 +18,16 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
   sources = {
+    {name = 'copilot'},
+    {name = 'luasnip'},
+    {name = 'nvim_lsp'},
     {name = 'buffer'},
     {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'luasnip'},
   },
+
   mapping = {
 	  ["<Tab>"] = cmp_action.luasnip_supertab(),
-      ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
+    ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
 	  ['<CR>'] = cmp.mapping.confirm({select = false}),
 
 	  -- Navigate between snippet placeholder
