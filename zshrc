@@ -13,6 +13,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 export PATH="$HOME/.local/bin/":$PATH
 export PATH="$HOME/Library/Python/3.9/bin/":$PATH
+export PATH="$HOME/go/bin/":$PATH
 
 # theme
 ZSH_THEME="fishy"
