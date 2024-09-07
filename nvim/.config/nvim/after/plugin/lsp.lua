@@ -2,7 +2,6 @@
 local lsp = require("lsp-zero").preset({})
 
 lsp.ensure_installed({
-  'tsserver',
   'pyright',
   'gopls',
 })
@@ -48,4 +47,3 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
-

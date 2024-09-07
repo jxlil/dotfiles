@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>tr", vim.cmd.Trouble)
+vim.keymap.set("n", "<leader>tr", ":Trouble diagnostics toggle <CR>")
 vim.keymap.set("n", "<leader>nt", vim.cmd.NvimTreeToggle)
 vim.keymap.set("n", "<leader>ps", vim.cmd.PackerSync)
 

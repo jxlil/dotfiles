@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use 'mhartington/formatter.nvim'
   use 'mg979/vim-visual-multi'
+  use 'folke/trouble.nvim'
 
   -- copilot
   use {
@@ -27,9 +28,6 @@ return require('packer').startup(function(use)
     end
   }
 
-
-  use 'zbirenbaum/copilot-cmp'
-
   -- colorscheme
   use 'sainnhe/gruvbox-material'
 
@@ -40,16 +38,6 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-
-
-  use {
-    'folke/trouble.nvim',
-    config = function()
-      require("trouble").setup {
-        icons = false,
-      }
-    end
   }
 
   use {
